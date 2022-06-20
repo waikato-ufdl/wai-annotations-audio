@@ -37,6 +37,42 @@ optional arguments:
 ```
 
 
+### PITCH-SHIFT
+Augmentation method for shifting the pitch of audio files.
+
+#### Domain(s):
+- **Speech Domain**
+- **Audio classification domain**
+
+#### Options:
+```
+usage: pitch-shift [-m AUG_MODE] [--suffix AUG_SUFFIX] [--bins-per-octave BINS_PER_OCTAVE] [-s SEED]
+                   [-a] [-f STEPS_FROM] [-t STEPS_TO] [-T THRESHOLD]
+
+optional arguments:
+  -m AUG_MODE, --mode AUG_MODE
+                        the audio augmentation mode to use, available modes: replace, add (default:
+                        replace)
+  --suffix AUG_SUFFIX   the suffix to use for the file names in case of augmentation mode add
+                        (default: None)
+  --bins-per-octave BINS_PER_OCTAVE
+                        how many steps per octave (default: 12.0)
+  -s SEED, --seed SEED  the seed value to use for the random number generator; randomly seeded if
+                        not provided (default: None)
+  -a, --seed-augmentation
+                        whether to seed the augmentation; if specified, uses the seeded random
+                        generator to produce a seed value from 0 to 1000 for the augmentation.
+                        (default: False)
+  -f STEPS_FROM, --from-steps STEPS_FROM
+                        the minimum (fractional) steps to shift (default: None)
+  -t STEPS_TO, --to-steps STEPS_TO
+                        the maximum (fractional) steps to shift (default: None)
+  -T THRESHOLD, --threshold THRESHOLD
+                        the threshold to use for Random.rand(): if equal or above, augmentation gets
+                        applied; range: 0-1; default: 0 (= always) (default: None)
+```
+
+
 ### RESAMPLE-AUDIO
 Resamples audio files.
 
