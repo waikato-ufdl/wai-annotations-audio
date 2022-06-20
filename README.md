@@ -76,15 +76,22 @@ optional arguments:
 ### RESAMPLE-AUDIO
 Resamples audio files.
 
+For resample types, see:
+https://librosa.org/doc/latest/generated/librosa.resample.html#librosa.resample
+
 #### Domain(s):
-- **Speech Domain**
 - **Audio classification domain**
+- **Speech Domain**
 
 #### Options:
 ```
-usage: resample-audio [-s SAMPLE_RATE] [-v]
+usage: resample-audio [-t RESAMPLE_TYPE] [-s SAMPLE_RATE] [-v]
 
 optional arguments:
+  -t RESAMPLE_TYPE, --resample-type RESAMPLE_TYPE
+                        the resampling type to apply (kaiser_best|kaiser_fast|fft|polyphase|linear|z
+                        ero_order_hold|sinc_best|sinc_medium|sinc_fastest|soxr_vhq|soxr_hq|soxr_mq|s
+                        oxr_lq|soxr_qq) (default: kaiser_best)
   -s SAMPLE_RATE, --sample-rate SAMPLE_RATE
                         the sample rate to use for the audio data. (default: 22050)
   -v, --verbose         whether to output some debugging output (default: False)

@@ -11,7 +11,9 @@ class ResampleAudioISPSpecifier(ProcessorStageSpecifier):
     """
     @classmethod
     def description(cls) -> str:
-        return "Resamples audio files."
+        return "Resamples audio files.\n\n"\
+               "For resample types, see:\n"\
+               "https://librosa.org/doc/latest/generated/librosa.resample.html#librosa.resample"
 
     @classmethod
     def domain_transfer_function(
