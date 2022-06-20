@@ -7,7 +7,7 @@ from wai.annotations.core.specifier import ProcessorStageSpecifier
 
 class TrimAudioISPSpecifier(ProcessorStageSpecifier):
     """
-    Resamples audio files.
+    Trims silence from audio files.
     """
     @classmethod
     def description(cls) -> str:
