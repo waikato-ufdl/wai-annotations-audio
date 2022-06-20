@@ -11,7 +11,7 @@ class ConvertToWavACISPSpecifier(ProcessorStageSpecifier):
     """
     @classmethod
     def description(cls) -> str:
-        return "Converts mp3/flac/ogg to wav for audio classification."
+        return "Converts mp3/flac/ogg to wav for audio classification domain."
 
     @classmethod
     def domain_transfer_function(
