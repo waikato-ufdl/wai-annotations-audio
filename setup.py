@@ -39,11 +39,14 @@ setup(
     install_requires=[
         "wai.annotations.core>=0.1.7",
         "librosa",
+        "pysoundfile",
     ],
     entry_points={
         "wai.annotations.plugins": [
             # Sources
             # ISPs
+            "convert-to-wav-ac=wai.annotations.audio.isp.convert_to_wav.specifier:ConvertToWavACISPSpecifier",
+            "convert-to-wav-sp=wai.annotations.audio.isp.convert_to_wav.specifier:ConvertToWavSPISPSpecifier",
             # Sinks
         ]
     }
