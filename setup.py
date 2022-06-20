@@ -37,7 +37,7 @@ setup(
     author='Peter Reutemann',
     author_email='fracpete@waikato.ac.nz',
     install_requires=[
-        "wai.annotations.core>=0.1.7",
+        "wai.annotations.core>=0.1.8",
         "librosa",
         "pysoundfile",
     ],
@@ -45,12 +45,9 @@ setup(
         "wai.annotations.plugins": [
             # Sources
             # ISPs
-            "convert-to-wav-ac=wai.annotations.audio.isp.convert_to_wav.specifier:ConvertToWavACISPSpecifier",
-            "convert-to-wav-sp=wai.annotations.audio.isp.convert_to_wav.specifier:ConvertToWavSPISPSpecifier",
-            "convert-to-mono-ac=wai.annotations.audio.isp.convert_to_mono.specifier:ConvertToMonoACISPSpecifier",
-            "convert-to-mono-sp=wai.annotations.audio.isp.convert_to_mono.specifier:ConvertToMonoSPISPSpecifier",
-            "resample-ac=wai.annotations.audio.isp.resample_audio.specifier:ResampleAudioACISPSpecifier",
-            "resample-sp=wai.annotations.audio.isp.resample_audio.specifier:ResampleAudioSPISPSpecifier",
+            "convert-to-mono=wai.annotations.audio.isp.convert_to_mono.specifier:ConvertToMonoISPSpecifier",
+            "convert-to-wav=wai.annotations.audio.isp.convert_to_wav.specifier:ConvertToWavISPSpecifier",
+            "resample-audio=wai.annotations.audio.isp.resample.specifier:ResampleAudioISPSpecifier",
             # Sinks
         ]
     }

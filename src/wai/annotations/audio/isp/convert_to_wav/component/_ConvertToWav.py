@@ -1,15 +1,10 @@
 import os
-import librosa
-import soundfile
-import tempfile
-import time
-from io import BytesIO
 
 from wai.common.cli.options import TypedOption
 from wai.annotations.core.component import ProcessorComponent
 from wai.annotations.core.stream import ThenFunction, DoneFunction
 from wai.annotations.core.stream.util import RequiresNoFinalisation
-from wai.annotations.domain.audio import AudioInstance, Audio
+from wai.annotations.domain.audio import AudioInstance, Audio, AudioFormat
 
 
 class ConvertToWav(
@@ -23,8 +18,8 @@ class ConvertToWav(
     sample_rate: int = TypedOption(
         "-s", "--sample-rate",
         type=int,
-        default=22050,
-        help="the sample rate to use for the WAV data."
+        default=None,
+        help="the sample rate to use for the audio data, for overriding the native rate."
     )
 
     def process_element(
@@ -33,31 +28,11 @@ class ConvertToWav(
             then: ThenFunction[AudioInstance],
             done: DoneFunction
     ):
-        ext = os.path.splitext(element.data.filename.lower())[1]
-        filename_new = os.path.splitext(element.data.filename)[0] + ".wav"
-        if ext == ".mp3":
-            filename_tmp = os.path.join(tempfile.gettempdir(), "waiann-%d.mp3" % round(time.time()))
-            with open(filename_tmp, "wb") as fp:
-                fp.write(element.data.data)
-                fp.close()
-            data, sample_rate = librosa.load(filename_tmp, sr=self.sample_rate)
-            bytes = BytesIO()
-            soundfile.write(bytes, data, sample_rate, format="WAV")
-            bytes.seek(0)
-            audio = Audio(filename_new, bytes.read())
-            then(element.__class__(audio, element.annotations))
-            try:
-                os.remove(filename_tmp)
-            except:
-                pass
-        elif ext in [".flac", ".ogg"]:
-            data, sample_rate = librosa.load(BytesIO(element.data.data), sr=self.sample_rate)
-            bytes = BytesIO()
-            soundfile.write(bytes, data, sample_rate, format="WAV")
-            bytes.seek(0)
-            audio = Audio(filename_new, bytes.read())
-            then(element.__class__(audio, element.annotations))
-        elif ext == ".wav":
-            then(element)
-        else:
-            raise Exception("Unknown audio file format (%s): %s" % (element.data.filename, ext))
+        filename_new = os.path.splitext(element.data.filename)[0] + "." + AudioFormat.WAV.get_default_extension()
+        audio = Audio(
+            filename_new,
+            data=None,
+            format=AudioFormat.WAV,
+            sample_rate=element.data.audio_data[1],
+            audio_data=element.data.audio_data)
+        then(element.__class__(audio, element.annotations))

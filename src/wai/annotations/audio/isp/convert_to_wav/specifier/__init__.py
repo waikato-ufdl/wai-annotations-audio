@@ -1,2 +1,1 @@
-from ._ConvertToWavACISPSpecifier import ConvertToWavACISPSpecifier
-from ._ConvertToWavSPISPSpecifier import ConvertToWavSPISPSpecifier
+from ._ConvertToWavISPSpecifier import ConvertToWavISPSpecifier

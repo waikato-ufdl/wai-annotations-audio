@@ -6,93 +6,47 @@ The manual is available here:
 https://ufdl.cms.waikato.ac.nz/wai-annotations-manual/
 
 ## Plugins
-### CONVERT-TO-MONO-AC
-Converts audio files to mono (audio classification).
+### CONVERT-TO-MONO
+Converts audio files to monophonic.
 
 #### Domain(s):
+- **Speech Domain**
 - **Audio classification domain**
 
 #### Options:
 ```
-usage: convert-to-mono-ac [-s SAMPLE_RATE]
-
-optional arguments:
-  -s SAMPLE_RATE, --sample-rate SAMPLE_RATE
-                        the sample rate to use for the audio data. (default: 22050)
+usage: convert-to-mono
 ```
 
-### CONVERT-TO-MONO-SP
-Converts audio files to mono (speech domain)
+
+### CONVERT-TO-WAV
+Converts mp3/flac/ogg to wav.
 
 #### Domain(s):
 - **Speech Domain**
-
-#### Options:
-```
-usage: convert-to-mono-sp [-s SAMPLE_RATE]
-
-optional arguments:
-  -s SAMPLE_RATE, --sample-rate SAMPLE_RATE
-                        the sample rate to use for the audio data. (default: 22050)
-```
-
-
-### CONVERT-TO-WAV-AC
-Converts mp3/flac/ogg to wav for audio classification domain.
-
-#### Domain(s):
 - **Audio classification domain**
 
 #### Options:
 ```
-usage: convert-to-wav-ac [-s SAMPLE_RATE]
+usage: convert-to-wav [-s SAMPLE_RATE]
 
 optional arguments:
   -s SAMPLE_RATE, --sample-rate SAMPLE_RATE
-                        the sample rate to use for the WAV data. (default: 22050)
+                        the sample rate to use for the audio data, for overriding the native rate.
+                        (default: None)
 ```
 
 
-### CONVERT-TO-WAV-SP
-Converts mp3/flac/ogg to wav for speech domain.
-
-#### Domain(s):
-- **Speech Domain**
-
-#### Options:
-```
-usage: convert-to-wav-sp [-s SAMPLE_RATE]
-
-optional arguments:
-  -s SAMPLE_RATE, --sample-rate SAMPLE_RATE
-                        the sample rate to use for the WAV data. (default: 22050)
-```
-
-### RESAMPLE-AC
-Resamples audio files (audio classification).
+### RESAMPLE-AUDIO
+Resamples audio files.
 
 #### Domain(s):
 - **Audio classification domain**
-
-#### Options:
-```
-usage: resample-ac [-s SAMPLE_RATE]
-
-optional arguments:
-  -s SAMPLE_RATE, --sample-rate SAMPLE_RATE
-                        the sample rate to use for the audio data. (default: 22050)
-```
-
-
-### RESAMPLE-SP
-Resamples audio files (speech domain)
-
-#### Domain(s):
 - **Speech Domain**
 
 #### Options:
 ```
-usage: resample-sp [-s SAMPLE_RATE]
+usage: resample-audio [-s SAMPLE_RATE]
 
 optional arguments:
   -s SAMPLE_RATE, --sample-rate SAMPLE_RATE
