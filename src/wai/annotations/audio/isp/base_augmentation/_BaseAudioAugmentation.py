@@ -57,6 +57,11 @@ class BaseAudioAugmentation(
         help="the threshold to use for Random.rand(): if equal or above, augmentation gets applied; range: 0-1; default: 0 (= always)"
     )
 
+    verbose: bool = FlagOption(
+        "-v", "--verbose",
+        help="whether to output debugging information"
+    )
+
     def _default_suffix(self):
         """
         Returns the default suffix to use for audios when using "add" rather than "replace" as mode.
