@@ -1,6 +1,9 @@
 # wai-annotations-audio
 wai.annotations module for audio processing.
 
+Makes use of the [librosa](https://librosa.org/) and [soundfile](https://python-soundfile.readthedocs.io/) 
+libraries.
+
 The manual is available here:
 
 https://ufdl.cms.waikato.ac.nz/wai-annotations-manual/
