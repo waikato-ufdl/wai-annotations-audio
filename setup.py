@@ -49,6 +49,8 @@ setup(
             "convert-to-wav-sp=wai.annotations.audio.isp.convert_to_wav.specifier:ConvertToWavSPISPSpecifier",
             "convert-to-mono-ac=wai.annotations.audio.isp.convert_to_mono.specifier:ConvertToMonoACISPSpecifier",
             "convert-to-mono-sp=wai.annotations.audio.isp.convert_to_mono.specifier:ConvertToMonoSPISPSpecifier",
+            "resample-ac=wai.annotations.audio.isp.resample_audio.specifier:ResampleAudioACISPSpecifier",
+            "resample-sp=wai.annotations.audio.isp.resample_audio.specifier:ResampleAudioSPISPSpecifier",
             # Sinks
         ]
     }

@@ -4,4 +4,5 @@ Audio processing plugins for wai.annotations:
 * `convert-to-mono-sp`: ISP for converting MP3/OGG/FLAC/WAV to mono WAV (speech)
 * `convert-to-wav-ac`: ISP for converting MP3/OGG/FLAC to WAV (audio classification)
 * `convert-to-wav-sp`: ISP for converting MP3/OGG/FLAC to WAV (speech)
-* ...
+* `resample-ac`: ISP for resampling MP3/OGG/FLAC/WAV (audio classification)
+* `resample-sp`: ISP for resampling MP3/OGG/FLAC/WAV (speech)

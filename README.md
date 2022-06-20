@@ -68,3 +68,33 @@ optional arguments:
                         the sample rate to use for the WAV data. (default: 22050)
 ```
 
+### RESAMPLE-AC
+Resamples audio files (audio classification).
+
+#### Domain(s):
+- **Audio classification domain**
+
+#### Options:
+```
+usage: resample-ac [-s SAMPLE_RATE]
+
+optional arguments:
+  -s SAMPLE_RATE, --sample-rate SAMPLE_RATE
+                        the sample rate to use for the audio data. (default: 22050)
+```
+
+
+### RESAMPLE-SP
+Resamples audio files (speech domain)
+
+#### Domain(s):
+- **Speech Domain**
+
+#### Options:
+```
+usage: resample-sp [-s SAMPLE_RATE]
+
+optional arguments:
+  -s SAMPLE_RATE, --sample-rate SAMPLE_RATE
+                        the sample rate to use for the audio data. (default: 22050)
+```
