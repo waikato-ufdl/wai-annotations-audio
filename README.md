@@ -37,18 +37,18 @@ optional arguments:
 ```
 
 
-## PITCH-SHIFT
+### PITCH-SHIFT
 Augmentation method for shifting the pitch of audio files.
 
-### Domain(s):
-- **Speech Domain**
+#### Domain(s):
 - **Audio classification domain**
+- **Speech Domain**
 
-### Options:
+#### Options:
 ```
 usage: pitch-shift [-m AUG_MODE] [--suffix AUG_SUFFIX] [--bins-per-octave BINS_PER_OCTAVE]
                    [--resample-type RESAMPLE_TYPE] [-s SEED] [-a] [-f STEPS_FROM] [-t STEPS_TO]
-                   [-T THRESHOLD]
+                   [-T THRESHOLD] [-v]
 
 optional arguments:
   -m AUG_MODE, --mode AUG_MODE
@@ -75,6 +75,7 @@ optional arguments:
   -T THRESHOLD, --threshold THRESHOLD
                         the threshold to use for Random.rand(): if equal or above, augmentation gets
                         applied; range: 0-1; default: 0 (= always) (default: None)
+  -v, --verbose         whether to output debugging information (default: False)
 ```
 
 
