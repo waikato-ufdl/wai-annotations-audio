@@ -5,4 +5,5 @@ Audio processing plugins for wai.annotations:
 * `pitch-shift`: augmentation ISP for shifting the pitch
 * `resample-audio`: ISP for resampling MP3/OGG/FLAC/WAV
 * `stft-spectrogram`: ISP for generating plot from a short-time fourier-transform spectrogram
+* `time-stretch`: augmentation ISP for time-stretching audio (speed up/slow down)
 * `trim-audio`: ISP for trimming silence from audio

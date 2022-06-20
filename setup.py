@@ -50,6 +50,7 @@ setup(
             "pitch-shift=wai.annotations.audio.isp.pitch_shift.specifier:PitchShiftISPSpecifier",
             "resample-audio=wai.annotations.audio.isp.resample.specifier:ResampleAudioISPSpecifier",
             "trim-audio=wai.annotations.audio.isp.trim.specifier:TrimAudioISPSpecifier",
+            "time-stretch=wai.annotations.audio.isp.time_stretch.specifier:TimeStretchISPSpecifier",
             # XDCs
             "stft-spectrogram=wai.annotations.audio.xdc.stft_spectrogram.specifier:STFTSpectrogramISPSpecifier",
             # Sinks

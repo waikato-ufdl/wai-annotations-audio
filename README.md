@@ -132,6 +132,43 @@ optional arguments:
 ```
 
 
+### TIME-STRETCH
+Augmentation method for stretching the time of audio files (speed up/slow down).
+
+#### Domain(s):
+- **Speech Domain**
+- **Audio classification domain**
+
+#### Options:
+```
+usage: time-stretch [-m AUG_MODE] [--suffix AUG_SUFFIX] [-f RATE_FROM] [-t RATE_TO] [-s SEED] [-a]
+                    [-T THRESHOLD] [-v]
+
+optional arguments:
+  -m AUG_MODE, --mode AUG_MODE
+                        the audio augmentation mode to use, available modes: replace, add (default:
+                        replace)
+  --suffix AUG_SUFFIX   the suffix to use for the file names in case of augmentation mode add
+                        (default: None)
+  -f RATE_FROM, --from-rate RATE_FROM
+                        the minimum stretch factor (<1: slow down, 1: same, >1: speed up) (default:
+                        None)
+  -t RATE_TO, --to-rate RATE_TO
+                        the maximum stretch factor (<1: slow down, 1: same, >1: speed up) (default:
+                        None)
+  -s SEED, --seed SEED  the seed value to use for the random number generator; randomly seeded if
+                        not provided (default: None)
+  -a, --seed-augmentation
+                        whether to seed the augmentation; if specified, uses the seeded random
+                        generator to produce a seed value from 0 to 1000 for the augmentation.
+                        (default: False)
+  -T THRESHOLD, --threshold THRESHOLD
+                        the threshold to use for Random.rand(): if equal or above, augmentation gets
+                        applied; range: 0-1; default: 0 (= always) (default: None)
+  -v, --verbose         whether to output debugging information (default: False)
+```
+
+
 ### TRIM-AUDIO
 Trims silence from audio files.
 
