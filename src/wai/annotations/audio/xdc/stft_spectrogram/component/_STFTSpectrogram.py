@@ -63,6 +63,13 @@ class STFTSpectrogram(
         help="used when 'centering'"
     )
 
+    dpi: float = TypedOption(
+        "--dpi",
+        type=int,
+        default=100,
+        help="the dots per inch"
+    )
+
     def process_element(
             self,
             element: AudioClassificationInstance,
@@ -70,6 +77,10 @@ class STFTSpectrogram(
             done: DoneFunction
     ):
         data, sample_rate = element.data.audio_data
+
+        # not mono?
+        if len(data.shape) > 1:
+            data = librosa.to_mono(data)
 
         # generate spectrogram
         D = librosa.stft(data, n_fft=self.num_fft, hop_length=self.hop_length, win_length=self.win_length,
@@ -81,7 +92,7 @@ class STFTSpectrogram(
         librosa.display.specshow(S_db, x_axis='time', y_axis='linear', ax=ax)
         b = BytesIO()
         plt.axis('off')
-        plt.savefig(b, format='png', bbox_inches='tight', pad_inches=0)
+        plt.savefig(b, format='png', bbox_inches='tight', pad_inches=0, dpi=self.dpi)
         b.seek(0)
 
         # create output data

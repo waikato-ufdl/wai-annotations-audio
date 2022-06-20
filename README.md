@@ -62,11 +62,12 @@ Generates a plot from a short time fourier transform (STFT) spectrogram.
 
 #### Options:
 ```
-usage: stft-spectrogram [--center] [--hop-length HOP_LENGTH] [--num-fft NUM_FFT]
+usage: stft-spectrogram [--center] [--dpi DPI] [--hop-length HOP_LENGTH] [--num-fft NUM_FFT]
                         [--pad-mode PAD_MODE] [--win-length WIN_LENGTH] [--window WINDOW]
 
 optional arguments:
   --center              for centering the signal. (default: False)
+  --dpi DPI             the dots per inch (default: 100)
   --hop-length HOP_LENGTH
                         number of audio samples between adjacent STFT columns. defaults to
                         win_length // 4 (default: None)
