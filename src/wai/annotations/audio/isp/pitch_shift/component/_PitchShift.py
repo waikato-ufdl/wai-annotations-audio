@@ -80,8 +80,11 @@ class PitchShift(BaseAudioAugmentation):
             if self.verbose:
                 self.logger.info("steps: %f" % steps)
 
-        # apply shift
-        data, sample_rate = element.data.audio_data
-        data = librosa.effects.pitch_shift(data, sr=sample_rate, n_steps=steps, bins_per_octave=self.bins_per_octave, res_type=self.resample_type)
-        audio = Audio(element.data.filename, format=AudioFormat.WAV, sample_rate=sample_rate, audio_data=(data, sample_rate))
-        return element.__class__(audio, element.annotations)
+        if steps is None:
+            return element
+        else:
+            # apply shift
+            data, sample_rate = element.data.audio_data
+            data = librosa.effects.pitch_shift(data, sr=sample_rate, n_steps=steps, bins_per_octave=self.bins_per_octave, res_type=self.resample_type)
+            audio = Audio(element.data.filename, format=AudioFormat.WAV, sample_rate=sample_rate, audio_data=(data, sample_rate))
+            return element.__class__(audio, element.annotations)
