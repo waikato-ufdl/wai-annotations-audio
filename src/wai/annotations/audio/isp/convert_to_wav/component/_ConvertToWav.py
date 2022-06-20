@@ -46,6 +46,10 @@ class ConvertToWav(
             bytes.seek(0)
             audio = Audio(filename_new, bytes.read())
             then(element.__class__(audio, element.annotations))
+            try:
+                os.remove(filename_tmp)
+            except:
+                pass
         elif ext in [".flac", ".ogg"]:
             data, sample_rate = librosa.load(BytesIO(element.data.data), sr=self.sample_rate)
             bytes = BytesIO()
@@ -53,5 +57,7 @@ class ConvertToWav(
             bytes.seek(0)
             audio = Audio(filename_new, bytes.read())
             then(element.__class__(audio, element.annotations))
-        else:
+        elif ext == ".wav":
             then(element)
+        else:
+            raise Exception("Unknown audio file format (%s): %s" % (element.data.filename, ext))
