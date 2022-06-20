@@ -41,16 +41,17 @@ optional arguments:
 Resamples audio files.
 
 #### Domain(s):
-- **Audio classification domain**
 - **Speech Domain**
+- **Audio classification domain**
 
 #### Options:
 ```
-usage: resample-audio [-s SAMPLE_RATE]
+usage: resample-audio [-s SAMPLE_RATE] [-v]
 
 optional arguments:
   -s SAMPLE_RATE, --sample-rate SAMPLE_RATE
                         the sample rate to use for the audio data. (default: 22050)
+  -v, --verbose         whether to output some debugging output (default: False)
 ```
 
 
@@ -79,4 +80,26 @@ optional arguments:
                         padded with zeros to match num_fft. defaults to win_length = num_fft
                         (default: None)
   --window WINDOW       a window function, such as scipy.signal.windows.hann (default: hann)
+```
+
+
+### TRIM-AUDIO
+Trims silence from audio files.
+
+#### Domain(s):
+- **Audio classification domain**
+- **Speech Domain**
+
+#### Options:
+```
+usage: trim-audio [--frame-length FRAME_LENGTH] [--hop-length HOP_LENGTH] [--top-db TOP_DB] [-v]
+
+optional arguments:
+  --frame-length FRAME_LENGTH
+                        the number of samples per analysis frame. (default: 2048)
+  --hop-length HOP_LENGTH
+                        the number of samples between analysis frames (default: 512)
+  --top-db TOP_DB       the threshold (in decibels) below reference to consider as silence.
+                        (default: 60)
+  -v, --verbose         whether to output some debugging output (default: False)
 ```

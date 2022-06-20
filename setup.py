@@ -48,6 +48,7 @@ setup(
             "convert-to-mono=wai.annotations.audio.isp.convert_to_mono.specifier:ConvertToMonoISPSpecifier",
             "convert-to-wav=wai.annotations.audio.isp.convert_to_wav.specifier:ConvertToWavISPSpecifier",
             "resample-audio=wai.annotations.audio.isp.resample.specifier:ResampleAudioISPSpecifier",
+            "trim-audio=wai.annotations.audio.isp.trim.specifier:TrimAudioISPSpecifier",
             # XDCs
             "stft-spectrogram=wai.annotations.audio.xdc.stft_spectrogram.specifier:STFTSpectrogramISPSpecifier",
             # Sinks
