@@ -37,6 +37,36 @@ optional arguments:
 ```
 
 
+### MEL-SPECTROGRAM
+Generates a plot from a Mel spectrogram.
+
+#### Domain(s):
+- **Audio classification domain**
+
+#### Options:
+```
+usage: mel-spectrogram [--center] [--dpi DPI] [--hop-length HOP_LENGTH] [--num-fft NUM_FFT]
+                       [--pad-mode PAD_MODE] [--power POWER] [--win-length WIN_LENGTH]
+                       [--window WINDOW]
+
+optional arguments:
+  --center              for centering the signal. (default: False)
+  --dpi DPI             the dots per inch (default: 100)
+  --hop-length HOP_LENGTH
+                        number of audio samples between adjacent STFT columns. (default: 512)
+  --num-fft NUM_FFT     the length of the windowed signal after padding with zeros. should be power
+                        of two. (default: 2048)
+  --pad-mode PAD_MODE   used when 'centering' (default: constant)
+  --power POWER         exponent for the magnitude melspectrogram. e.g., 1 for energy, 2 for power,
+                        etc. (default: 2.0)
+  --win-length WIN_LENGTH
+                        each frame of audio is windowed by window of length win_length and then
+                        padded with zeros to match num_fft. defaults to win_length = num_fft
+                        (default: None)
+  --window WINDOW       a window function, such as scipy.signal.windows.hann (default: hann)
+```
+
+
 ### PITCH-SHIFT
 Augmentation method for shifting the pitch of audio files.
 
