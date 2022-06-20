@@ -77,6 +77,8 @@ class PitchShift(BaseAudioAugmentation):
             else:
                 rnd = Random(aug_seed)
                 steps = rnd.random() * (self.steps_to - self.steps_from) + self.steps_from
+            if self.verbose:
+                self.logger.info("steps: %f" % steps)
 
         # apply shift
         data, sample_rate = element.data.audio_data
