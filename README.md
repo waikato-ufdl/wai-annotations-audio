@@ -37,17 +37,18 @@ optional arguments:
 ```
 
 
-### PITCH-SHIFT
+## PITCH-SHIFT
 Augmentation method for shifting the pitch of audio files.
 
-#### Domain(s):
+### Domain(s):
 - **Speech Domain**
 - **Audio classification domain**
 
-#### Options:
+### Options:
 ```
-usage: pitch-shift [-m AUG_MODE] [--suffix AUG_SUFFIX] [--bins-per-octave BINS_PER_OCTAVE] [-s SEED]
-                   [-a] [-f STEPS_FROM] [-t STEPS_TO] [-T THRESHOLD]
+usage: pitch-shift [-m AUG_MODE] [--suffix AUG_SUFFIX] [--bins-per-octave BINS_PER_OCTAVE]
+                   [--resample-type RESAMPLE_TYPE] [-s SEED] [-a] [-f STEPS_FROM] [-t STEPS_TO]
+                   [-T THRESHOLD]
 
 optional arguments:
   -m AUG_MODE, --mode AUG_MODE
@@ -56,7 +57,11 @@ optional arguments:
   --suffix AUG_SUFFIX   the suffix to use for the file names in case of augmentation mode add
                         (default: None)
   --bins-per-octave BINS_PER_OCTAVE
-                        how many steps per octave (default: 12.0)
+                        how many steps per octave (default: 12)
+  --resample-type RESAMPLE_TYPE
+                        the resampling type to apply (kaiser_best|kaiser_fast|fft|polyphase|linear|z
+                        ero_order_hold|sinc_best|sinc_medium|sinc_fastest|soxr_vhq|soxr_hq|soxr_mq|s
+                        oxr_lq|soxr_qq) (default: kaiser_best)
   -s SEED, --seed SEED  the seed value to use for the random number generator; randomly seeded if
                         not provided (default: None)
   -a, --seed-augmentation

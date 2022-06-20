@@ -5,6 +5,7 @@ from wai.annotations.domain.audio import AudioInstance, Audio, AudioFormat
 from wai.common.cli.options import TypedOption
 
 from wai.annotations.audio.isp.base_augmentation import BaseAudioAugmentation
+from wai.annotations.audio.isp.resample.component import RESAMPLE_TYPE_DEFAULT, RESAMPLE_TYPES
 
 
 class PitchShift(BaseAudioAugmentation):
@@ -29,6 +30,13 @@ class PitchShift(BaseAudioAugmentation):
         type=int,
         default=12,
         help="how many steps per octave"
+    )
+
+    resample_type: str = TypedOption(
+        "--resample-type",
+        type=str,
+        default=RESAMPLE_TYPE_DEFAULT,
+        help="the resampling type to apply (%s)" % "|".join(RESAMPLE_TYPES)
     )
 
     def _default_suffix(self):
@@ -72,6 +80,6 @@ class PitchShift(BaseAudioAugmentation):
 
         # apply shift
         data, sample_rate = element.data.audio_data
-        data = librosa.effects.pitch_shift(data, sr=sample_rate, n_steps=steps, bins_per_octave=self.bins_per_octave)
+        data = librosa.effects.pitch_shift(data, sr=sample_rate, n_steps=steps, bins_per_octave=self.bins_per_octave, res_type=self.resample_type)
         audio = Audio(element.data.filename, format=AudioFormat.WAV, sample_rate=sample_rate, audio_data=(data, sample_rate))
         return element.__class__(audio, element.annotations)
