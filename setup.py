@@ -39,7 +39,7 @@ setup(
     install_requires=[
         "wai.annotations.core>=0.1.8",
         "librosa",
-        "pysoundfile",
+        "soundfile",
     ],
     entry_points={
         "wai.annotations.plugins": [
