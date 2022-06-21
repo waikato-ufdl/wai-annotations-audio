@@ -83,8 +83,8 @@ class STFTSpectrogram(
             data = librosa.to_mono(data)
 
         # generate spectrogram
-        D = librosa.stft(data, n_fft=self.num_fft, hop_length=self.hop_length, win_length=self.win_length,
-                                 window=self.window, center=self.center, pad_mode=self.pad_mode)
+        D = librosa.stft(y=data, n_fft=self.num_fft, hop_length=self.hop_length, win_length=self.win_length,
+                         window=self.window, center=self.center, pad_mode=self.pad_mode)
         S_db = librosa.amplitude_to_db(np.abs(D), ref=np.max)
 
         # plot

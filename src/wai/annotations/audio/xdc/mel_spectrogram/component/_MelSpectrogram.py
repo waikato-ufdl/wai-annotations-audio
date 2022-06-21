@@ -90,7 +90,7 @@ class MelSpectrogram(
             data = librosa.to_mono(data)
 
         # generate spectrogram
-        D = librosa.feature.melspectrogram(data, sr=sample_rate, n_fft=self.num_fft, hop_length=self.hop_length,
+        D = librosa.feature.melspectrogram(y=data, sr=sample_rate, n_fft=self.num_fft, hop_length=self.hop_length,
                                            win_length=self.win_length, window=self.window, center=self.center,
                                            pad_mode=self.pad_mode, power=self.power)
         S_db = librosa.power_to_db(np.abs(D), ref=np.max)
