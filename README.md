@@ -222,3 +222,12 @@ optional arguments:
                         (default: 60)
   -v, --verbose         whether to output some debugging output (default: False)
 ```
+
+## Other
+
+### Urban8k
+The [Urban8k](src/wai/annotations/audio/source/urban8k/_Urban8k.py) class can be used in conjunction
+with the `generic-source-ac` source from the [wai.annotations.generic](https://github.com/waikato-ufdl/wai-annotations-generic)
+module to load the data from the [Urban8k](https://urbansounddataset.weebly.com/urbansound8k.html) dataset. 
+With the `to-subdir-ac` sink from the [wai.annotations.subdir](https://github.com/waikato-ufdl/wai-annotations-subdir)
+module, you can split the audio files per class.
