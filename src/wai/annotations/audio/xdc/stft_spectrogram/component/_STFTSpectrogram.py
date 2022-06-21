@@ -95,6 +95,8 @@ class STFTSpectrogram(
         plt.savefig(b, format='png', bbox_inches='tight', pad_inches=0, dpi=self.dpi)
         b.seek(0)
 
+        plt.close('all')
+
         # create output data
         filename_new = os.path.splitext(element.data.filename)[0] + ".png"
         image = Image(filename_new, b.read(), ImageFormat.PNG)
