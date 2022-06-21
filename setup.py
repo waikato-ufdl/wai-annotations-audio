@@ -55,6 +55,8 @@ setup(
             "mel-spectrogram=wai.annotations.audio.xdc.mel_spectrogram.specifier:MelSpectrogramISPSpecifier",
             "stft-spectrogram=wai.annotations.audio.xdc.stft_spectrogram.specifier:STFTSpectrogramISPSpecifier",
             # Sinks
+            "audio-info-ac=wai.annotations.audio.format.audio_info.specifier:AudioInfoACOutputFormatSpecifier",
+            "audio-info-sp=wai.annotations.audio.format.audio_info.specifier:AudioInfoSPOutputFormatSpecifier",
         ]
     }
 )

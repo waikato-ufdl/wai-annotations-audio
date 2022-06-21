@@ -1,5 +1,7 @@
 Audio processing plugins for wai.annotations:
 
+* `audio-info-ac`: sink for collating/outputting information on the audio classification files
+* `audio-info-sp`: sink for collating/outputting information on the speech files
 * `convert-to-mono`: ISP for converting MP3/OGG/FLAC/WAV to mono WAV
 * `convert-to-wav`: ISP for converting MP3/OGG/FLAC to WAV
 * `mel-spectrogram`: XDC for generating plot from a mel spectrogram (outputs image classification instance)

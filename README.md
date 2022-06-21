@@ -9,6 +9,42 @@ The manual is available here:
 https://ufdl.cms.waikato.ac.nz/wai-annotations-manual/
 
 ## Plugins
+### AUDIO-INFO-AC
+Collates and outputs information on the audio files.
+
+#### Domain(s):
+- **Audio classification domain**
+
+#### Options:
+```
+usage: audio-info-ac [-o OUTPUT_FILE] [-f OUTPUT_FORMAT]
+
+optional arguments:
+  -o OUTPUT_FILE, --output OUTPUT_FILE
+                        the file to write the information to; uses stdout if omitted (default: )
+  -f OUTPUT_FORMAT, --format OUTPUT_FORMAT
+                        the format to use for the output, available modes: csv, json (default: text)
+```
+
+
+### AUDIO-INFO-SP
+Collates and outputs information on the audio files.
+
+#### Domain(s):
+- **Speech Domain**
+
+#### Options:
+```
+usage: audio-info-sp [-o OUTPUT_FILE] [-f OUTPUT_FORMAT]
+
+optional arguments:
+  -o OUTPUT_FILE, --output OUTPUT_FILE
+                        the file to write the information to; uses stdout if omitted (default: )
+  -f OUTPUT_FORMAT, --format OUTPUT_FORMAT
+                        the format to use for the output, available modes: csv, json (default: text)
+```
+
+
 ### CONVERT-TO-MONO
 Converts audio files to monophonic.
 
