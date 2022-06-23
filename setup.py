@@ -53,6 +53,7 @@ setup(
             "time-stretch=wai.annotations.audio.isp.time_stretch.specifier:TimeStretchISPSpecifier",
             # XDCs
             "mel-spectrogram=wai.annotations.audio.xdc.mel_spectrogram.specifier:MelSpectrogramISPSpecifier",
+            "mfcc-spectrogram=wai.annotations.audio.xdc.mfcc_spectrogram.specifier:MFCCSpectrogramISPSpecifier",
             "stft-spectrogram=wai.annotations.audio.xdc.stft_spectrogram.specifier:STFTSpectrogramISPSpecifier",
             # Sinks
             "audio-info-ac=wai.annotations.audio.format.audio_info.specifier:AudioInfoACOutputFormatSpecifier",

@@ -106,6 +106,45 @@ optional arguments:
 ```
 
 
+## MFCC-SPECTROGRAM
+Generates a plot from Mel-frequency cepstral coefficients.
+
+### Domain(s):
+- **Audio classification domain**
+
+### Options:
+```
+usage: mfcc-spectrogram [--center] [--dct-type DCT_TYPE] [--dpi DPI] [--hop-length HOP_LENGTH]
+                        [--lifter LIFTER] [--norm NORM] [--num-fft NUM_FFT] [--num-mfcc NUM_MFCC]
+                        [--pad-mode PAD_MODE] [--power POWER] [--win-length WIN_LENGTH]
+                        [--window WINDOW]
+
+optional arguments:
+  --center              for centering the signal. (default: False)
+  --dct-type DCT_TYPE   the Discrete cosine transform (DCT) type (1|2|3). By default, DCT type-2 is
+                        used. (default: 2)
+  --dpi DPI             the dots per inch (default: 100)
+  --hop-length HOP_LENGTH
+                        number of audio samples between adjacent STFT columns. (default: 512)
+  --lifter LIFTER       If lifter>0, apply liftering (cepstral filtering) to the MFCC: M[n, :] <-
+                        M[n, :] * (1 + sin(pi * (n + 1) / lifter) * lifter / 2) (default: 0)
+  --norm NORM           If dct_type is 2 or 3, setting norm='ortho' uses an ortho-normal DCT basis.
+                        Normalization is not supported for dct_type=1. (options: none|ortho)
+                        (default: ortho)
+  --num-fft NUM_FFT     the length of the windowed signal after padding with zeros. should be power
+                        of two. (default: 2048)
+  --num-mfcc NUM_MFCC   the number of MFCCs to return. (default: 20)
+  --pad-mode PAD_MODE   used when 'centering' (default: constant)
+  --power POWER         exponent for the magnitude melspectrogram. e.g., 1 for energy, 2 for power,
+                        etc. (default: 2.0)
+  --win-length WIN_LENGTH
+                        each frame of audio is windowed by window of length win_length and then
+                        padded with zeros to match num_fft. defaults to win_length = num_fft
+                        (default: None)
+  --window WINDOW       a window function, such as scipy.signal.windows.hann (default: hann)
+```
+
+
 ### PITCH-SHIFT
 Augmentation method for shifting the pitch of audio files.
 

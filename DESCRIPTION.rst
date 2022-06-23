@@ -5,6 +5,7 @@ Audio processing plugins for wai.annotations:
 * `convert-to-mono`: ISP for converting MP3/OGG/FLAC/WAV to mono WAV
 * `convert-to-wav`: ISP for converting MP3/OGG/FLAC to WAV
 * `mel-spectrogram`: XDC for generating plot from a mel spectrogram (outputs image classification instance)
+* `mfcc-spectrogram`: XDC for generating plots from Mel-frequency cepstral coefficients (outputs image classification instance).
 * `pitch-shift`: augmentation ISP for shifting the pitch
 * `resample-audio`: ISP for resampling MP3/OGG/FLAC/WAV
 * `stft-spectrogram`: XDC for generating plot from a short-time fourier-transform spectrogram (outputs image classification instance)
