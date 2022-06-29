@@ -106,13 +106,13 @@ optional arguments:
 ```
 
 
-## MFCC-SPECTROGRAM
+### MFCC-SPECTROGRAM
 Generates a plot from Mel-frequency cepstral coefficients.
 
-### Domain(s):
+#### Domain(s):
 - **Audio classification domain**
 
-### Options:
+#### Options:
 ```
 usage: mfcc-spectrogram [--center] [--dct-type DCT_TYPE] [--dpi DPI] [--hop-length HOP_LENGTH]
                         [--lifter LIFTER] [--norm NORM] [--num-fft NUM_FFT] [--num-mfcc NUM_MFCC]
