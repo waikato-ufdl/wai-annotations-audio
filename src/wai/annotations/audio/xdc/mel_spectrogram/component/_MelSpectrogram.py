@@ -70,6 +70,13 @@ class MelSpectrogram(
         help="exponent for the magnitude melspectrogram. e.g., 1 for energy, 2 for power, etc."
     )
 
+    cmap: str = TypedOption(
+        "--cmap",
+        type=str,
+        default=None,
+        help="the Matplotlib colormap to use (append _r for reverse), automatically infers map if not provided; use 'gray_r' for grayscale; for available maps see: https://matplotlib.org/stable/gallery/color/colormap_reference.html"
+    )
+
     dpi: float = TypedOption(
         "--dpi",
         type=int,
@@ -97,7 +104,10 @@ class MelSpectrogram(
 
         # plot
         fig, ax = plt.subplots()
-        librosa.display.specshow(S_db, x_axis='time', y_axis='linear', ax=ax)
+        if self.cmap is not None:
+            librosa.display.specshow(S_db, x_axis='time', y_axis='linear', ax=ax, cmap=self.cmap)
+        else:
+            librosa.display.specshow(S_db, x_axis='time', y_axis='linear', ax=ax)
         b = BytesIO()
         plt.axis('off')
         plt.savefig(b, format='png', bbox_inches='tight', pad_inches=0, dpi=self.dpi)
