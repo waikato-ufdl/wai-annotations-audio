@@ -1,7 +1,7 @@
 Changelog
 =========
 
-1.0.2 (????-??-??)
+1.0.2 (2022-11-23)
 ------------------
 
 - Added `--cmap` (colormap) option to `mel-spectrogram`, `mfcc-spectrogram` and `stft-spectrogram`

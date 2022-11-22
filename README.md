@@ -84,12 +84,16 @@ Generates a plot from a Mel spectrogram.
 
 #### Options:
 ```
-usage: mel-spectrogram [--center] [--dpi DPI] [--hop-length HOP_LENGTH] [--num-fft NUM_FFT]
-                       [--pad-mode PAD_MODE] [--power POWER] [--win-length WIN_LENGTH]
-                       [--window WINDOW]
+usage: mel-spectrogram [--center] [--cmap CMAP] [--dpi DPI] [--hop-length HOP_LENGTH]
+                       [--num-fft NUM_FFT] [--pad-mode PAD_MODE] [--power POWER]
+                       [--win-length WIN_LENGTH] [--window WINDOW]
 
 optional arguments:
   --center              for centering the signal. (default: False)
+  --cmap CMAP           the Matplotlib colormap to use (append _r for reverse), automatically infers
+                        map if not provided; use 'gray_r' for grayscale; for available maps see:
+                        https://matplotlib.org/stable/gallery/color/colormap_reference.html
+                        (default: None)
   --dpi DPI             the dots per inch (default: 100)
   --hop-length HOP_LENGTH
                         number of audio samples between adjacent STFT columns. (default: 512)
@@ -114,13 +118,17 @@ Generates a plot from Mel-frequency cepstral coefficients.
 
 #### Options:
 ```
-usage: mfcc-spectrogram [--center] [--dct-type DCT_TYPE] [--dpi DPI] [--hop-length HOP_LENGTH]
-                        [--lifter LIFTER] [--norm NORM] [--num-fft NUM_FFT] [--num-mfcc NUM_MFCC]
-                        [--pad-mode PAD_MODE] [--power POWER] [--win-length WIN_LENGTH]
-                        [--window WINDOW]
+usage: mfcc-spectrogram [--center] [--cmap CMAP] [--dct-type DCT_TYPE] [--dpi DPI]
+                        [--hop-length HOP_LENGTH] [--lifter LIFTER] [--norm NORM]
+                        [--num-fft NUM_FFT] [--num-mfcc NUM_MFCC] [--pad-mode PAD_MODE]
+                        [--power POWER] [--win-length WIN_LENGTH] [--window WINDOW]
 
 optional arguments:
   --center              for centering the signal. (default: False)
+  --cmap CMAP           the Matplotlib colormap to use (append _r for reverse), automatically infers
+                        map if not provided; use 'gray_r' for grayscale; for available maps see:
+                        https://matplotlib.org/stable/gallery/color/colormap_reference.html
+                        (default: None)
   --dct-type DCT_TYPE   the Discrete cosine transform (DCT) type (1|2|3). By default, DCT type-2 is
                         used. (default: 2)
   --dpi DPI             the dots per inch (default: 100)
@@ -220,11 +228,16 @@ Generates a plot from a short time fourier transform (STFT) spectrogram.
 
 #### Options:
 ```
-usage: stft-spectrogram [--center] [--dpi DPI] [--hop-length HOP_LENGTH] [--num-fft NUM_FFT]
-                        [--pad-mode PAD_MODE] [--win-length WIN_LENGTH] [--window WINDOW]
+usage: stft-spectrogram [--center] [--cmap CMAP] [--dpi DPI] [--hop-length HOP_LENGTH]
+                        [--num-fft NUM_FFT] [--pad-mode PAD_MODE] [--win-length WIN_LENGTH]
+                        [--window WINDOW]
 
 optional arguments:
   --center              for centering the signal. (default: False)
+  --cmap CMAP           the Matplotlib colormap to use (append _r for reverse), automatically infers
+                        map if not provided; use 'gray_r' for grayscale; for available maps see:
+                        https://matplotlib.org/stable/gallery/color/colormap_reference.html
+                        (default: None)
   --dpi DPI             the dots per inch (default: 100)
   --hop-length HOP_LENGTH
                         number of audio samples between adjacent STFT columns. defaults to
